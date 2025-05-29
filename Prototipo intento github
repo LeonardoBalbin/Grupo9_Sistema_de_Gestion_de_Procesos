@@ -1,0 +1,22 @@
+//Grupo9_Sistema_de_Gestion_de_Procesos
+//Proyecto Sistema de Gestión de Procesos del grupo 9
+#include <iostream>
+using namespace std;
+
+struct Proceso {
+    int id;
+    string nombre;
+    int prioridad;
+};
+
+struct Nodo {
+    Proceso dato;
+    Nodo* siguiente;
+};
+
+void insertarProceso(Nodo*& cabeza, Proceso p) {
+    Nodo* nuevoNodo = new Nodo();
+    nuevoNodo->dato = p;
+    nuevoNodo->siguiente = cabeza;
+    cabeza = nuevoNodo;
+}
